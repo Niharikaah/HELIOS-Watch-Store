@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block title %}Login | HELIOS{% endblock %}
+{% block content %}
+<section class="auth-page">
+    <div class="form-card auth-card">
+        <p class="eyebrow">WELCOME BACK</p>
+        <h1>Login to Helios</h1>
+        <input id="login-email" type="email" placeholder="Email">
+        <input id="login-password" type="password" placeholder="Password">
+        <button class="btn full" onclick="demoLogin()">Login</button>
+        <p id="login-message" class="message"></p>
+        <p>New here? <a href="/signup">Create an account</a></p>
+    </div>
+</section>
+{% endblock %}
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/auth.js') }}"></script>
+{% endblock %}

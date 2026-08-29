@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+{% block title %}HELIOS | The Watch Store{% endblock %}
+{% block content %}
+<section class="hero-premium">
+    <div class="hero-copy">
+        <p class="gold-label">TIME. ELEVATED.</p>
+        <h1>Timeless Style.<br>Endless Precision.</h1>
+        <p>Discover premium watches for every moment.</p>
+        <a class="gold-btn" href="/products">SHOP NOW <span>→</span></a>
+    </div>
+    <div class="hero-product">
+        <div class="hero-glow"></div>
+        <img src="/static/images/rolex.jpg" alt="Featured Helios watch">
+    </div>
+</section>
+
+<section class="service-strip">
+    <div><span class="service-symbol">♢</span><div><strong>100% Authentic</strong><small>Original products only</small></div></div>
+    <div><span class="service-symbol">◇</span><div><strong>2 Years Warranty</strong><small>On selected watches</small></div></div>
+    <div><span class="service-symbol">▱</span><div><strong>Free Delivery</strong><small>On orders above ₹999</small></div></div>
+    <div><span class="service-symbol">↶</span><div><strong>Easy Returns</strong><small>7 days return policy</small></div></div>
+</section>
+
+<section class="section category-section">
+    <div class="section-heading compact-heading">
+        <h2>Shop by Category</h2>
+        <a href="/products">View All <span>→</span></a>
+    </div>
+    <div class="category-grid premium-categories">
+        {% set category_data = [
+          ('Men','gshock.jpg'), ('Women','titan.jpg'), ('Unisex','fastrack.jpg'),
+          ('Smartwatches','fossil.jpg'), ('Analog','titan.jpg'), ('Digital','vintage.jpg'), ('Sports','active.jpg')
+        ] %}
+        {% for name, image in category_data %}
+        <a class="category-card premium-category" href="/products?category={{ name }}">
+            <img src="/static/images/{{ image }}" alt="{{ name }} watches">
+            <span><strong>{{ name }}</strong><small>Explore watches</small></span>
+        </a>
+        {% endfor %}
+    </div>
+</section>
+
+<section class="section featured-section">
+    <div class="section-heading compact-heading">
+        <h2>Featured Watches</h2>
+        <a href="/products">View All <span>→</span></a>
+    </div>
+    <div id="featured-products" class="product-grid premium-products"></div>
+</section>
+{% endblock %}
+{% block scripts %}
+<script>
+function renderFeaturedFromDatabase() {
+    const box = document.getElementById("featured-products");
+    if (box) box.innerHTML = products.slice(0, 7).map(productCard).join("");
+}
+window.addEventListener("heliosProductsReady", renderFeaturedFromDatabase);
+if (products.length) renderFeaturedFromDatabase();
+</script>
+{% endblock %}
