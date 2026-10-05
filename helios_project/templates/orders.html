@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block title %}Orders | HELIOS{% endblock %}
+{% block content %}
+<section class="page-head">
+    <p class="eyebrow">YOUR PURCHASES</p>
+    <h1>Order History</h1>
+</section>
+<div id="orders-list" class="section"></div>
+{% endblock %}
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/orders.js') }}"></script>
+{% endblock %}

@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block title %}Product | HELIOS{% endblock %}
+{% block content %}
+<section id="product-details" class="details"></section>
+{% endblock %}
+{% block scripts %}
+<script>
+    window.selectedProductId = {{ product_id }};
+</script>
+<script src="{{ url_for('static', filename='js/product-details.js') }}"></script>
+{% endblock %}

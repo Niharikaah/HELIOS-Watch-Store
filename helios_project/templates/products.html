@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block title %}Watches | HELIOS{% endblock %}
+{% block content %}
+<section class="page-head">
+    <p class="eyebrow">HELIOS COLLECTION</p>
+    <h1>Watches</h1>
+    <p>Browse watches by brand, seller and category.</p>
+</section>
+
+<section class="toolbar">
+    <input id="search-input" type="search" placeholder="Search watches, brands...">
+    <select id="category-filter">
+        <option value="">All categories</option>
+        <option>Men</option><option>Women</option><option>Unisex</option>
+        <option>Smartwatches</option><option>Analog</option><option>Digital</option><option>Sports</option>
+    </select>
+</section>
+
+<div id="product-grid" class="product-grid"></div>
+{% endblock %}
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/products-page.js') }}"></script>
+{% endblock %}

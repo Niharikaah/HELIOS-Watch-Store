@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block title %}Favourites | HELIOS{% endblock %}
+{% block content %}
+<section class="page-head">
+    <p class="eyebrow">SAVED FOR LATER</p>
+    <h1>Favourites</h1>
+</section>
+<div id="favourite-grid" class="product-grid section"></div>
+{% endblock %}
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/favourites.js') }}"></script>
+{% endblock %}

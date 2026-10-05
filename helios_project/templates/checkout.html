@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block title %}Checkout | HELIOS{% endblock %}
+{% block content %}
+<section class="page-head">
+    <p class="eyebrow">CHECKOUT</p>
+    <h1>Complete your order</h1>
+</section>
+<div class="form-card">
+    <h2>Delivery Address</h2>
+    <input id="address" placeholder="House / Street / Area">
+    <div class="two-col">
+        <input id="city" placeholder="City">
+        <input id="state" placeholder="State">
+    </div>
+    <input id="pincode" placeholder="Pincode">
+    <h2>Payment Method</h2>
+    <select id="payment-method">
+        <option>UPI</option>
+        <option>Card</option>
+        <option>Cash on Delivery</option>
+    </select>
+    <button class="btn full" onclick="placeDemoOrder()">Place Order</button>
+    <p id="checkout-message" class="message"></p>
+</div>
+{% endblock %}
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/checkout.js') }}"></script>
+{% endblock %}

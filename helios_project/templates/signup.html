@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block title %}Sign Up | HELIOS{% endblock %}
+{% block content %}
+<section class="auth-page">
+    <div class="form-card auth-card">
+        <p class="eyebrow">JOIN HELIOS</p>
+        <h1>Create account</h1>
+        <input id="signup-name" placeholder="Full name">
+        <input id="signup-email" type="email" placeholder="Email">
+        <input id="signup-phone" placeholder="Phone">
+        <input id="signup-password" type="password" placeholder="Password">
+        <select id="signup-role">
+            <option value="CUSTOMER">Customer</option>
+            <option value="SELLER">Seller</option>
+        </select>
+        <button class="btn full" onclick="demoSignup()">Create Account</button>
+        <p id="signup-message" class="message"></p>
+    </div>
+</section>
+{% endblock %}
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/auth.js') }}"></script>
+{% endblock %}

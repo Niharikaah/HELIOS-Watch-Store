@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block title %}Cart | HELIOS{% endblock %}
+{% block content %}
+<section class="page-head">
+    <p class="eyebrow">YOUR BAG</p>
+    <h1>Shopping Cart</h1>
+</section>
+<section class="cart-layout">
+    <div id="cart-items"></div>
+    <aside class="summary">
+        <h2>Order Summary</h2>
+        <div class="summary-row"><span>Subtotal</span><strong id="cart-total">₹0</strong></div>
+        <a class="btn full" href="/checkout">Proceed to Checkout</a>
+    </aside>
+</section>
+{% endblock %}
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/cart.js') }}"></script>
+{% endblock %}
